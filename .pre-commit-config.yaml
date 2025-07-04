@@ -53,6 +53,5 @@ repos:
   - repo: https://github.com/crate-ci/committed
     rev: v1.1.11
     hooks:
-      - id: commitlint
+      - id: committed
         stages: [commit-msg]
-        additional_dependencies: ["@commitlint/config-conventional"]
