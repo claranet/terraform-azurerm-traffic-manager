@@ -83,7 +83,7 @@ module "traffic_manager" {
 
 | Name | Version |
 |------|---------|
-| azurecaf | ~> 1.2.28 |
+| azurecaf | ~> 1.2.29 |
 | azurerm | ~> 4.0 |
 
 ## Modules
@@ -118,10 +118,10 @@ module "traffic_manager" {
 | monitor\_config | Monitor configuration for the Traffic Manager profile. | <pre>object({<br/>    protocol                    = string<br/>    port                        = number<br/>    path                        = optional(string)<br/>    expected_status_code_ranges = optional(list(string))<br/>    custom_header = optional(list(object({<br/>      name  = string<br/>      value = string<br/>    })))<br/>    interval_in_seconds          = optional(number)<br/>    timeout_in_seconds           = optional(number)<br/>    tolerated_number_of_failures = optional(number)<br/>  })</pre> | <pre>{<br/>  "custom_header": null,<br/>  "expected_status_code_ranges": [],<br/>  "interval_in_seconds": 30,<br/>  "port": 22,<br/>  "protocol": "TCP",<br/>  "timeout_in_seconds": 10,<br/>  "tolerated_number_of_failures": 3<br/>}</pre> | no |
 | name\_prefix | Optional prefix for the generated name. | `string` | `""` | no |
 | name\_suffix | Optional suffix for the generated name. | `string` | `""` | no |
-| profile\_status | The status of the Traffic Manager profile. Possible values are 'Enabled' or 'Disabled'. | `string` | `"Enabled"` | no |
+| profile\_status | Whether to enable the profile. Possible values are `Enabled` or `Disabled`. | `string` | `"Enabled"` | no |
 | resource\_group\_name | Name of the resource group. | `string` | n/a | yes |
 | stack | Project stack name. | `string` | n/a | yes |
-| traffic\_routing\_method | Specify which routing method is preferred between the following: 'Geographic', 'Performance', 'Priority', 'Weighted', 'MultiValue', 'Subnet'. | `string` | `"Performance"` | no |
+| traffic\_routing\_method | Specify which routing method is preferred between the following: `Geographic`, `Performance`, `Priority`, `Weighted`, `MultiValue`, `Subnet`. | `string` | `"Performance"` | no |
 | traffic\_view\_enabled | Whether Traffic View is enabled for the Traffic Manager profile. | `bool` | `false` | no |
 
 ## Outputs
@@ -130,7 +130,7 @@ module "traffic_manager" {
 |------|-------------|
 | id | Traffic Manager ID |
 | name | Traffic Manager name |
-| traffic\_manager | Traffic Manager output object |
+| resource | Traffic Manager output object. |
 <!-- END_TF_DOCS -->
 
 ## Related documentation
