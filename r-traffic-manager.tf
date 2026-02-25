@@ -17,10 +17,10 @@ resource "azurerm_traffic_manager_profile" "main" {
     path                        = var.monitor_config.path
     expected_status_code_ranges = var.monitor_config.expected_status_code_ranges
     dynamic "custom_header" {
-      for_each = var.monitor_config.custom_header[*]
+      for_each = coalesce(var.monitor_config.custom_header, [])
       content {
-        name  = custom_header.name
-        value = custom_header.value
+        name  = custom_header.value.name
+        value = custom_header.value.value
       }
     }
     interval_in_seconds          = var.monitor_config.interval_in_seconds

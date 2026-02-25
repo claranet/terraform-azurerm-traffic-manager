@@ -128,8 +128,10 @@ module "traffic_manager" {
 
 | Name | Description |
 |------|-------------|
-| id | Traffic Manager ID |
-| name | Traffic Manager name |
+| fqdn | Traffic Manager FQDN. |
+| id | Traffic Manager ID. |
+| module\_diagnostics | Diagnostics settings module output. |
+| name | Traffic Manager name. |
 | resource | Traffic Manager output object. |
 <!-- END_TF_DOCS -->
 
