@@ -1,5 +1,5 @@
-output "traffic_manager" {
-  description = "Traffic Manager output object"
+output "resource" {
+  description = "Traffic Manager output object."
   value       = azurerm_traffic_manager_profile.main
 }
 

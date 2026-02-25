@@ -1,5 +1,5 @@
 resource "azurerm_traffic_manager_profile" "main" {
-  name                = local.traffic_manager_name
+  name                = local.name
   resource_group_name = var.resource_group_name
 
   profile_status         = var.profile_status
@@ -34,7 +34,7 @@ resource "azurerm_traffic_manager_profile" "main" {
 
   lifecycle {
     precondition {
-      condition     = var.max_return >= 1 && var.max_return <= 8 && (var.traffic_routing_method != "MultiValue" || var.max_return != null)
+      condition     = var.traffic_routing_method == "MultiValue" ? try(var.max_return >= 1 && var.max_return <= 8, false) : var.max_return == null
       error_message = "The amount of endpoints to return for DNS queries must be set when the traffic_routing_method is 'MultiValue' and must be in the range of 1 to 8."
     }
   }

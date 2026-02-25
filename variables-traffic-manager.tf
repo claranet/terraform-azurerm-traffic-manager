@@ -1,16 +1,16 @@
 variable "profile_status" {
-  description = "The status of the Traffic Manager profile. Possible values are 'Enabled' or 'Disabled'."
+  description = "Whether to enable the profile. Possible values are `Enabled` or `Disabled`."
   type        = string
   default     = "Enabled"
 
   validation {
     condition     = contains(["Enabled", "Disabled"], var.profile_status)
-    error_message = "The value of profile_status must be either 'Enabled' or 'Disabled'."
+    error_message = "The value of profile_status must be either `Enabled` or `Disabled`."
   }
 }
 
 variable "traffic_routing_method" {
-  description = "Specify which routing method is preferred between the following: 'Geographic', 'Performance', 'Priority', 'Weighted', 'MultiValue', 'Subnet'."
+  description = "Specify which routing method is preferred between the following: `Geographic`, `Performance`, `Priority`, `Weighted`, `MultiValue`, `Subnet`."
   type        = string
   default     = "Performance"
 }
@@ -60,12 +60,12 @@ variable "monitor_config" {
 
   validation {
     condition     = contains(["HTTP", "HTTPS", "TCP"], var.monitor_config.protocol)
-    error_message = "The value of protocol can only be 'HTTP', 'HTTPS' or 'TCP'."
+    error_message = "The value of protocol can only be `HTTP`, `HTTPS` or `TCP`."
   }
 
   validation {
-    condition     = contains(["HTTP", "HTTPS"], var.monitor_config.protocol) && var.monitor_config.path != "" || contains(["TCP"], var.monitor_config.protocol) && var.monitor_config.path == ""
-    error_message = "The value of path is required when the protocol is set to 'HTTP' or 'HTTPS' and cannot be used when the protocol is set to 'TCP'."
+    condition     = (contains(["HTTP", "HTTPS"], var.monitor_config.protocol) && var.monitor_config.path != null) || (contains(["TCP"], var.monitor_config.protocol) && var.monitor_config.path == null)
+    error_message = "The value of path is required when the protocol is set to `HTTP` or `HTTPS` and cannot be used when the protocol is set to `TCP`."
   }
 
   validation {
