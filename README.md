@@ -84,13 +84,13 @@ module "traffic_manager" {
 | Name | Version |
 |------|---------|
 | azurecaf | ~> 1.2.29 |
-| azurerm | ~> 4.0 |
+| azurerm | ~> 4.31 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| diagnostics | claranet/diagnostic-settings/azurerm | ~> 8.0.0 |
+| diagnostics | claranet/diagnostic-settings/azurerm | ~> 8.2 |
 
 ## Resources
 

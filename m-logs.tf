@@ -1,6 +1,6 @@
 module "diagnostics" {
   source  = "claranet/diagnostic-settings/azurerm"
-  version = "~> 8.0.0"
+  version = "~> 8.2"
 
   resource_id = azurerm_traffic_manager_profile.main.id
 
