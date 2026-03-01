@@ -1,3 +1,13 @@
+## 8.0.1 (2026-03-01)
+
+### Documentation
+
+* 📚️ update Changelog for first release fad494d
+
+### Miscellaneous Chores
+
+* **deps:** update dependency trivy to v0.69.2 0d66c6a
+
 ## 8.0.0 (2026-02-26)
 
 ### Features
