@@ -1,3 +1,18 @@
+## 8.0.2 (2026-03-27)
+
+### Bug Fixes
+
+* **trivy:** 🐛 drop unsafe trivy pre-commit 🔒️ bea00b8
+
+### Code Refactoring
+
+* update module structure and Github actions 👷 1880be8
+
+### Miscellaneous Chores
+
+* **deps:** update dependency trivy to v0.69.3 be18355
+* **deps:** update terraform azurecaf to ~> 1.3.0 bc6c465
+
 ## 8.0.1 (2026-03-01)
 
 ### Documentation
