@@ -1,3 +1,21 @@
+## 8.0.3 (2026-06-02)
+
+### Bug Fixes
+
+* 🐛 default output `resource` now require sensitive with OpenTofu 1.12+ d8bac85
+
+### Miscellaneous Chores
+
+* **deps:** 🔗 update mise conf for OpenTofu 823029f
+* **deps:** update dependency opentofu to v1.12.0 79ddee9
+* **deps:** update dependency terraform-docs to v0.23.0 3b5a171
+* **deps:** update dependency terraform-docs to v0.24.0 27ca7a7
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.3.0 3b5379b
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.4.0 a76e5b0
+* **deps:** update tools 0a4660d
+* **pre-commit:** 🔧 move to prek ee8f2f2
+* **tfdocs:** bump tfdocs to v0.22 🔧 86df495
+
 ## 8.0.2 (2026-03-27)
 
 ### Bug Fixes
