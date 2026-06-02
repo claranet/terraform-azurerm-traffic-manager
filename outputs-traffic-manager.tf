@@ -1,6 +1,7 @@
 output "resource" {
   description = "Traffic Manager output object."
   value       = azurerm_traffic_manager_profile.main
+  sensitive   = true
 }
 
 output "id" {
